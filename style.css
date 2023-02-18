@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap");
+
+:root {
+  --primary-color: #f5f1d4;
+  --border-radius: 5px;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Overpass Mono", monospace;
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 15l15 15H0V15zM15 0l15 15V0H15z' fill='%23c7dc82' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  margin: 0;
+  min-height: 100vh;
+}
+h1 {
+  background-color: rgb(26, 114, 76, 0.8);
+  border-radius: var(--border-radius);
+  color: #fffaf0;
+  cursor: pointer;
+  font-weight: lighter;
+  letter-spacing: 3px;
+  margin: 20px auto 10px;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+  width: 275px;
+}
+h1:hover {
+  background-color: #1a724c;
+}
+/* *Bookmarks */
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+.item {
+  background-color: rgb(26, 114, 76, 0.9);
+  border-radius: var(--border-radius);
+  color: #fffaf0;
+  padding: 20px;
+  margin: 10px;
+}
+.item:hover {
+  background-color: #1a724c;
+}
+a:link,
+a:visited {
+  color: #fffaf0;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+.fa-solid {
+  cursor: pointer;
+  float: right;
+  z-index: 2;
+}
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.name img {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: sub;
+}
+/* *Modal */
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.show-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  background-color: #fffaf0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 1s;
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.close-icon {
+  color: #f5f1d4;
+  cursor: pointer;
+  float: right;
+  font-size: 24px;
+  position: relative;
+  top: 13px;
+  right: 13px;
+}
+.modal-header {
+  background-color: #1a724c;
+  color: #f5f1d4;
+  padding: 15px;
+}
+h3 {
+  font-weight: lighter;
+  margin: 0;
+}
+.modal-content {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+/* *Form */
+.form-group {
+  height: 55px;
+}
+.form-input {
+  border: 2px solid #1a724c;
+  border-radius: var(--border-radius);
+  display: block;
+  font-family: inherit;
+  padding: 5px;
+  outline: none;
+  width: 97%;
+}
+.form-label {
+  display: block;
+}
+button {
+  background-color: #1a724c;
+  border: none;
+  border-radius: var(--border-radius);
+  color: #f5f1d4;
+  cursor: pointer;
+  font-family: inherit;
+  height: 30px;
+  width: 100px;
+  letter-spacing: 1.5px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+button:hover {
+  filter: brightness(110%);
+}
+button:focus {
+  outline: none;
+}
+i {
+  cursor: pointer;
+}
+
+/* *Media */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+  .name {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  h1#show-modal {
+    margin: 1rem auto;
+    max-width: 90%;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 992px) {
+  .container {
+    justify-content: space-evenly;
+  }
+  .name {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
